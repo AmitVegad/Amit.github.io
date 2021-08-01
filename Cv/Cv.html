@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Responsive CV </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="./Cv.css">
+	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-storage.js"></script>
+</head>
+<body>
+<div>
+    <div class="nav">
+        <ul >
+            <li><img id="nav_img" src="../public/avatar.png" alt=""></li>
+            <li><a id= "nav_head">Hi </a></li>
+            <li class="signout" style="float:right"><a onclick="signOut()">Signout</a></li>
+            <li style="float:right"><a href="../public/AmitCV.pdf" download>Download</a></li>
+
+        </ul>
+    </div>
+    <div class="cv">
+        <div class="container">
+        <div class="left_Side">
+            <div class="profileText">
+                <div class="imgBx">
+                    <img class="photo" src="../public/profile.jpg">
+                </div>
+                <br>
+                <h2>AMIT VEGAD <br><span>SOFTWARE ENGINEER</span> </h2>
+            </div>
+
+            <div class="contactInfo">
+                <h3 class="title">Contact Info</h3>
+                <ul>
+                    <li>
+                        <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                        <span class="text">+91 7048894879</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                        <span class="text">amitvegad600@gmail.com</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-globe" aria-hidden="true"></i></span>
+                        <span class="text">www.amitvegad.com</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                        <span class="text"><a style="color:#fff; text-decoration:none;" href="https://www.linkedin.com/in/amit-vegad/" target="_blank">www.linkedin/me</a></span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <span class="text">Gujarat, India</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="contactInfo education">
+                <h3 class="title">Education</h3>
+                <ul>
+                    <li>
+                        <h5>2016 - 2020</h5>
+                        <h4>Bachelor Degree Computer Engineering (8.20 CGPA)</h4>
+                        <h4>Pacific School of Engineering</h4>
+                    </li>
+                    <li>
+                        <h5>2014 - 2016</h5>
+                        <h4>HSC</h4>
+                        <h4>Kaushal Vidyabhavan</h4>
+                    </li>
+                    <li>
+                        <h5>2013 - 2014</h5>
+                        <h4>SSC</h4>
+                        <h4>Janmabhumi Highschool</h4>
+                    </li>
+                </ul>
+            </div>
+            <div class="contactInfo language">
+                <h3 class="title">Languages</h3>
+                <ul>
+                    <li>
+                        <span class="text">English</span>
+                        <span class="percent" style="width: 60%;">
+                            <div data-language="english"></div>
+                        </span>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <span class="text">Hindi</span>
+                        <span class="percent">
+                            <div data-language="hindi"></div>
+                        </span>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <span class="text">Gujarati</span>
+                        <span class="percent">
+                            <div data-language="gujarati"></div>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right_Side">
+            <div class="about">
+                <h2 class="title2">Profile</h2>
+                <p>Looking for a challenging role in a reputable organization to utilize my fullstack development skills for the growth of the organization as well as to enhance my knowledge about new and emerging trends in the IT sector.
+                </p>
+            </div>
+
+            <div class="about">
+                <h2 class="title2">Experience</h2>
+                <div class="box">
+                    <div class="year_company">
+                        <h5>FEB 2021 - Present</h5>
+                        <h5>GVM Technologies</h5>
+                    </div>
+                    <div class="text">
+                        <h4>Full stack developer</h4>
+                        <p>As a full stack developer, my job-role is make web application using frontend technology like reactJS and backend technologies framework like ExpressJS, Moleculer.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="year_company">
+                        <h5>Apr 2021 - Present</h5>
+                        <h5>Newton School</h5>
+                    </div>
+                    <div class="text">
+                        <h4>Trainee Full Stack Web Development</h4>
+                        <p>Trainee Full stack web development at newton school.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="year_company">
+                        <h5>Aug 2019 - Jan 2020</h5>
+                        <h5>Praveg Infotech</h5>
+                    </div>
+                    <div class="text">
+                        <h4>Internship</h4>
+                        <p>Learning and Internship in Android Application Development at Praveg Infotech</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="about skills">
+                <h2 class="title2">Professionals skills</h2>
+                <div class="box">
+                    <h4>NodeJS</h4>
+                    <div class="abc">
+                        <div class="percent" style="width: 80%;">
+                            <div data-knowledge="html"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>ReactJS</h4>
+                    <div class="abc">
+                        <div class="percent" style="width: 75%;">
+                            <div data-knowledge="html"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>JavaScript</h4>
+                    <div class="abc">
+                        <div class="percent" style="width: 80%;">
+                            <div data-knowledge="html"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>HTML</h4>
+                    <div class="abc">
+                        <div class="percent" style="width: 80%;">
+                            <div data-knowledge="html"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h4>CSS</h4>
+                    <div class="abc">
+                        <div class="percent" style="width: 70%;">
+                            <div data-knowledge="html"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Java</h4>
+                    <div class="abc">
+                        <div class="percent" style="width: 75%;">
+                            <div data-knowledge="html"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>C / C++</h4>
+                    <div class="abc">
+                        <div class="percent" style="width: 70%;">
+                            <div data-knowledge="html"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about">
+                <h2 class="title2">Project</h2>
+                <p><b>Pacific Campus</b> is an Android based mobile application which motive is to handling all the data of institute online and reducing work load of staff.
+                </p>
+            </div>
+
+            <div class="about interest">
+                <h2 class="title2">Interests</h2>
+                <ul>
+                    <li><i class="fa fa-gamepad" aria-hidden="true"></i> Gaming</li>
+                    <li><i class="fa fa-bus" aria-hidden="true"></i> Travelling</li>
+                    <li><i class="fa fa-film" aria-hidden="true"></i> Movie</li>
+                    <li><i class="fa fa-instagram" aria-hidden="true"></i> Social Media</li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<script src="../javascript/cv.js"></script>
+</body>
+</html>

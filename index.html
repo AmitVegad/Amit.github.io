@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3 azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">   
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
+	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-storage.js"></script>
+	<title>CV</title>
+</head>
+<body>
+
+		<div class="box" id="login">
+	    	<h1 >Login Form</h1>
+				<div id="ErrorBlock">
+					<small id="wrongEmail">enter correct email</small>
+					<small id="wrongPass">enter correct password</small>
+				</div>
+
+	      		<div class="inputBox">
+	
+	        		<input type="text" id="login_email" name="email" autocomplete="off" onchange="makeDefault()" required>
+	        		<label id="lab_email">Email</label>
+	      		</div>
+		      	
+		      	<div class="inputBox">
+		        	<input type="password"  id="login_password" name="password" onchange="makeDefault()" autocomplete="off" required>
+		        	<label id="lab_password">Password</label>
+		      	</div>
+
+			    <input type="submit" name="login" value="Login" onclick="Login()">
+				<h5 id="createAccount" >you haven't account? <span onclick="CreateAcc()"> click here</span></h5>
+	  	</div>
+
+		<div class="box" id="register">
+	    	<h1 >Sign Up</h1>
+				<div class="container">
+                    <div class="avatar-upload">
+                        <div class="avatar-edit">
+                            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg"/>
+                            <label for="imageUpload"></label>
+                        </div>
+                        <div class="avatar-preview">
+                            <div id="imagePreview" style="background-image: url(./public/avatar.png);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<div class="inputBox">
+	        		<input type="text" id="name" name="name" autocomplete="off" onchange="makeSignDefault()" required>
+	        		<label id="sign_labname">Name</label>
+	      		</div>
+	      		<div class="inputBox">
+	        		<input type="text" id="email" name="email" autocomplete="off" onchange="makeSignDefault()" required>
+	        		<label id="sign_labemail">Email</label>
+	      		</div>
+				  <div class="inputBox">
+	        		<input type="number" id="phone" name="phone" autocomplete="off" onchange="makeSignDefault()" required>
+	        		<label id="sign_labphone">Phone no.</label>
+	      		</div>
+		      	
+		      	<div class="inputBox">
+		        	<input type="password" id="password" name="password" autocomplete="off" onchange="makeSignDefault()" required>
+		        	<label id="sign_labpassword">Password</label>
+		      	</div>
+
+
+		      	<div class="inputBox">
+
+		        	<input type="password" id="password2" name="password" autocomplete="off" onchange="makeSignDefault()" required>
+
+		        	<label id="sign_labpassword2">Re-Enter Password</label>
+
+		      	</div>
+
+
+			    <input type="submit" name="signup" value="Sign Up" onclick="signUp()">
+				<h5 id="createAccount" >you have account? <span onclick="loginAcc()"> click here</span></h5>
+
+	  	</div>
+		  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+			<script src="./javascript/app.js"></script>
+</body>
+</html>
