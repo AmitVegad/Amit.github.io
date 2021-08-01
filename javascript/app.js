@@ -165,7 +165,7 @@ function Login(){
         .then((userCredential) => {
           login.style.display = "none";
           register.style.display = "none";
-          window.location.replace("../Cv/Cv.html");
+          window.location.replace("./Cv/Cv.html");
         })
         .catch((error) => {
             var errorCode = error.code;
